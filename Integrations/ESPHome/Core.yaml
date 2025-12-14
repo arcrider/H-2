@@ -1,5 +1,5 @@
 substitutions:
-  version: "25.12.2.1"
+  version: "25.12.2.2"
 
 esp32:
   board: esp32-c6-devkitm-1
@@ -906,3 +906,12 @@ script:
           blue: 0%
       - light.turn_off:
           id: rgb_light
+  - id: enable_wifi
+    then:
+      - lambda: !lambda |-
+          wifi::global_wifi_component->enable();
+
+  - id: disable_wifi
+    then:
+      - lambda: !lambda |-
+          wifi::global_wifi_component->disable();
