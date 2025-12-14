@@ -817,6 +817,7 @@ script:
       
   - id: play_song_2
     then:
+      - wifi.disable:
       - light.turn_on:
           brightness: 80%
           id: rgb_light
@@ -830,10 +831,12 @@ script:
       - delay: 30s
       - light.turn_off: rgb_light
       - light.turn_off: logo_light
+      - wifi.enable:
       - script.execute: ShouldSleep
 
   - id: play_song_3
     then:
+      - wifi.disable:
       - light.turn_on:
           brightness: 80%
           id: rgb_light
@@ -847,10 +850,12 @@ script:
       - delay: 30s
       - light.turn_off: rgb_light
       - light.turn_off: logo_light
+      - wifi.enable:
       - script.execute: ShouldSleep
 
   - id: play_song_4
     then:
+      - wifi.disable:
       - light.turn_on:
           brightness: 80%
           id: rgb_light
@@ -864,6 +869,7 @@ script:
       - delay: 30s
       - light.turn_off: rgb_light
       - light.turn_off: logo_light
+      - wifi.enable:
       - script.execute: ShouldSleep
 
   - id: play_song_x
